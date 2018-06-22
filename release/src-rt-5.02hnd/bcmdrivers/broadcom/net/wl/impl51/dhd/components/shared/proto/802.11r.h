@@ -1,7 +1,5 @@
 /*
- * BT-AMP (BlueTooth Alternate Mac and Phy) 802.11 PAL (Protocol Adaptation Layer)
- *
- * Copyright (C) 2016, Broadcom. All Rights Reserved.
+ * Copyright (C) 2017, Broadcom. All Rights Reserved.
  * 
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -18,25 +16,20 @@
  *
  * <<Broadcom-WL-IPTag/Open:>>
  *
- * $Id: 802.11_bta.h 518342 2014-12-01 23:21:41Z $
-*/
+ * Fundamental constants relating to 802.11r
+ *
+ * $Id$
+ */
 
-#ifndef _802_11_BTA_H_
-#define _802_11_BTA_H_
+#ifndef _802_11r_H_
+#define _802_11r_H_
 
-#define BT_SIG_SNAP_MPROT		"\xAA\xAA\x03\x00\x19\x58"
+#define FBT_R0KH_ID_LEN 49 /* includes null termination */
+#define FBT_REASSOC_TIME_DEF	1000
 
-/* BT-AMP 802.11 PAL Protocols */
-#define BTA_PROT_L2CAP				1
-#define	BTA_PROT_ACTIVITY_REPORT		2
-#define BTA_PROT_SECURITY			3
-#define BTA_PROT_LINK_SUPERVISION_REQUEST	4
-#define BTA_PROT_LINK_SUPERVISION_REPLY		5
+#define DOT11_FBT_SUBELEM_ID_R1KH_ID		1
+#define DOT11_FBT_SUBELEM_ID_GTK		2
+#define DOT11_FBT_SUBELEM_ID_R0KH_ID		3
+#define DOT11_FBT_SUBELEM_ID_IGTK		4
 
-/* BT-AMP 802.11 PAL AMP_ASSOC Type IDs */
-#define BTA_TYPE_ID_MAC_ADDRESS			1
-#define BTA_TYPE_ID_PREFERRED_CHANNELS		2
-#define BTA_TYPE_ID_CONNECTED_CHANNELS		3
-#define BTA_TYPE_ID_CAPABILITIES		4
-#define BTA_TYPE_ID_VERSION			5
-#endif /* _802_11_bta_h_ */
+#endif	/* #ifndef _802_11r_H_ */
