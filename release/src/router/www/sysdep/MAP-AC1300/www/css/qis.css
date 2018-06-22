@@ -201,7 +201,7 @@ a{
 	background-size: contain;
 }
 .appTable{
-	margin-top:50px;
+	margin-top: 150px;
 	width: 100%;
 }
 .hint{
@@ -232,9 +232,9 @@ a{
 	min-height: 1300px;
 }
 #static_setting{
-	min-height: 1300px;	
+	min-height: 1400px;	
 }
-.noWanHint{
+.noWanPic{
 	background:url('../images/qis/asus_hive_no_wan.png') center no-repeat;
 	background-size: contain;
 	padding: 0%;
@@ -242,12 +242,34 @@ a{
 	text-align: center;
 	margin-top: -180px;
 }
-.lyraGood{
-	background:url('../images/qis/asus_hive_good.png') center no-repeat;
+.wpsPic{
+	background:url('../images/qis/asus_hive_color.png') center no-repeat;
 	background-size: contain;
 	padding: 0%;
-	height: 600px;
+	height: 1000px;
 	text-align: center;
+	margin-top: -650px;
+	z-index: 9999;
+}
+.flashingColor{
+	width: 35%;
+	border-radius: 50%;
+	background-color: #FFF;
+	z-index: 1;
+	margin: auto;
+	margin-top: 250px;
+	overflow: hidden;
+}
+.flashingColor:after {
+	content: '';
+	display: block;
+	margin-top: 100%; /* margin 百分比相对父元素宽度计算 */
+}
+.green{
+	background-color: #0F0;
+}
+.blue{
+	background-color: #0CF;
 }
 .appDescContainer{
 	margin-top: 30px;
@@ -263,9 +285,8 @@ a{
 	width: 800px;
 	height: 800px;
 	text-align: center;
-	margin-top: 50px;
+	margin-top: 100px;
 	margin-left: 0px;
-	display: none;
 }
 .loadingIcon{
 	background: url('../images/InternetScan.gif') center no-repeat;
@@ -273,6 +294,12 @@ a{
 	height: 35px;
 	background-size: contain;
 	display: inline-block;
+}
+.AppDownloadLink{
+	display: none;
+}
+.summaryNetwork{
+	margin-top: -200px;
 }
 /*for Desktop*/
 @media screen and (min-width: 1000px){
@@ -295,7 +322,7 @@ a{
 	.footer_desktop{
 		display:block;
 		margin-top:30px;
-		height: 150px;
+		height: 120px;
 	}
 	#wireless_field{
 		border-bottom:0px solid #0ECDA4;
@@ -316,18 +343,24 @@ a{
 		width:70% !important;
 		max-width: 1000px;
 	}
+	.tos{
+		margin: auto;
+		margin-top: 50px;
+		width: 650px;
+	}
 	.tosDesc{
 		width: 80%;
 	}
 	.pageDesc{
 		min-width: 800px;
 	}
-	.noWanHint{
+	.noWanPic{
 		height: 600px;
 		margin-top: -50px;
 	}
-	.lyraGood{
-		display:none;
+	.wpsPic{
+		height: 600px;
+		margin-top: -450px;
 	}
 	.model_image{
 		margin-top:50px;
@@ -335,12 +368,151 @@ a{
 	.appMobile{
 		width: 550px;
 		height: 550px;
-		margin-top: -270px;
+		margin-top: -300px;
 		margin-left: 450px;
-		display:block;
+	}
+	.mobileView{
+		display: none;
 	}
 	.appTable{
 		width: auto;
+	}
+	.flashingColor{
+		margin-top: 100px;
+	}
+	.summaryNetwork{
+		margin-top: 0px;
+	}
+	.lyraGood{
+		background:url('../images/qis/asus_hive_good.png') center no-repeat;
+		background-size: contain;
+		padding: 0%;
+		height: 600px;
+		text-align: center;
+	}
 }
 
+.cssload-bell {
+	margin-top: 150px;
+	width: 97px;
+	height: 99px;
+	border-radius: 100%;
+	position: absolute;
+	left: calc(50% - 49px);
+}
+
+.cssload-circle {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+.cssload-circle .cssload-inner {
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+	border: 5px solid rgba(0,255,170,0.7);
+	border-right: none;
+	border-top: none;
+	background-clip: padding;
+	box-shadow: inset 0px 0px 10px rgba(0,255,170,0.15);
+}
+
+.cssload-circle:nth-of-type(0) {
+	transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+}
+.cssload-circle:nth-of-type(0) .cssload-inner {
+	animation: cssload-spin 2.3s infinite linear;
+		-o-animation: cssload-spin 2.3s infinite linear;
+		-ms-animation: cssload-spin 2.3s infinite linear;
+		-webkit-animation: cssload-spin 2.3s infinite linear;
+		-moz-animation: cssload-spin 2.3s infinite linear;
+}
+
+.cssload-circle:nth-of-type(1) {
+	transform: rotate(70deg);
+		-o-transform: rotate(70deg);
+		-ms-transform: rotate(70deg);
+		-webkit-transform: rotate(70deg);
+		-moz-transform: rotate(70deg);
+}
+.cssload-circle:nth-of-type(1) .cssload-inner {
+	animation: cssload-spin 2.3s infinite linear;
+		-o-animation: cssload-spin 2.3s infinite linear;
+		-ms-animation: cssload-spin 2.3s infinite linear;
+		-webkit-animation: cssload-spin 2.3s infinite linear;
+		-moz-animation: cssload-spin 2.3s infinite linear;
+}
+
+.cssload-circle:nth-of-type(2) {
+	transform: rotate(140deg);
+		-o-transform: rotate(140deg);
+		-ms-transform: rotate(140deg);
+		-webkit-transform: rotate(140deg);
+		-moz-transform: rotate(140deg);
+}
+.cssload-circle:nth-of-type(2) .cssload-inner {
+	animation: cssload-spin 2.3s infinite linear;
+		-o-animation: cssload-spin 2.3s infinite linear;
+		-ms-animation: cssload-spin 2.3s infinite linear;
+		-webkit-animation: cssload-spin 2.3s infinite linear;
+		-moz-animation: cssload-spin 2.3s infinite linear;
+}
+
+.cssload-bell {
+	animation: cssload-spin 5.75s infinite linear;
+		-o-animation: cssload-spin 5.75s infinite linear;
+		-ms-animation: cssload-spin 5.75s infinite linear;
+		-webkit-animation: cssload-spin 5.75s infinite linear;
+		-moz-animation: cssload-spin 5.75s infinite linear;
+}
+
+
+
+@keyframes cssload-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@-o-keyframes cssload-spin {
+	from {
+		-o-transform: rotate(0deg);
+	}
+	to {
+		-o-transform: rotate(360deg);
+	}
+}
+
+@-ms-keyframes cssload-spin {
+	from {
+		-ms-transform: rotate(0deg);
+	}
+	to {
+		-ms-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes cssload-spin {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@-moz-keyframes cssload-spin {
+	from {
+		-moz-transform: rotate(0deg);
+	}
+	to {
+		-moz-transform: rotate(360deg);
+	}
 }
